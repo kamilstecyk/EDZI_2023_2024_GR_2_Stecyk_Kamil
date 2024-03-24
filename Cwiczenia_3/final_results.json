@@ -1,0 +1,62 @@
+[
+    {
+        "tytul_filmu": "The Shawshank Redemption",
+        "ranking_imdb": "1",
+        "ocena_imdb": "9.3",
+        "ocena_rotten_tomatoes": "89"
+    },
+    {
+        "tytul_filmu": "The Godfather",
+        "ranking_imdb": "2",
+        "ocena_imdb": "9.2",
+        "ocena_rotten_tomatoes": "97"
+    },
+    {
+        "tytul_filmu": "The Dark Knight",
+        "ranking_imdb": "3",
+        "ocena_imdb": "9.0",
+        "ocena_rotten_tomatoes": "94"
+    },
+    {
+        "tytul_filmu": "12 Angry Men",
+        "ranking_imdb": "5",
+        "ocena_imdb": "9.0",
+        "ocena_rotten_tomatoes": "93"
+    },
+    {
+        "tytul_filmu": "Schindler's List",
+        "ranking_imdb": "6",
+        "ocena_imdb": "9.0",
+        "ocena_rotten_tomatoes": "98"
+    },
+    {
+        "tytul_filmu": "The Lord of the Rings: The Return of the King",
+        "ranking_imdb": "7",
+        "ocena_imdb": "9.0",
+        "ocena_rotten_tomatoes": "94"
+    },
+    {
+        "tytul_filmu": "Pulp Fiction",
+        "ranking_imdb": "8",
+        "ocena_imdb": "8.9",
+        "ocena_rotten_tomatoes": "92"
+    },
+    {
+        "tytul_filmu": "The Lord of the Rings: The Fellowship of the Ring",
+        "ranking_imdb": "9",
+        "ocena_imdb": "8.9",
+        "ocena_rotten_tomatoes": "91"
+    },
+    {
+        "tytul_filmu": "The Good, the Bad and the Ugly",
+        "ranking_imdb": "10",
+        "ocena_imdb": "8.8",
+        "ocena_rotten_tomatoes": "97"
+    },
+    {
+        "tytul_filmu": "Forrest Gump",
+        "ranking_imdb": "11",
+        "ocena_imdb": "8.8",
+        "ocena_rotten_tomatoes": "76"
+    }
+]
