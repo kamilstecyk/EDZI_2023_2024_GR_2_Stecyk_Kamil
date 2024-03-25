@@ -1,62 +1,602 @@
 [
     {
-        "tytul_filmu": "The Shawshank Redemption",
-        "ranking_imdb": "1",
-        "ocena_imdb": "9.3",
-        "ocena_rotten_tomatoes": "89"
+        "title": "The Shawshank Redemption",
+        "imdb_ranking": "1",
+        "imdb_rating": "9.3",
+        "rt_rating": "89"
     },
     {
-        "tytul_filmu": "The Godfather",
-        "ranking_imdb": "2",
-        "ocena_imdb": "9.2",
-        "ocena_rotten_tomatoes": "97"
+        "title": "The Godfather",
+        "imdb_ranking": "2",
+        "imdb_rating": "9.2",
+        "rt_rating": "97"
     },
     {
-        "tytul_filmu": "The Dark Knight",
-        "ranking_imdb": "3",
-        "ocena_imdb": "9.0",
-        "ocena_rotten_tomatoes": "94"
+        "title": "The Dark Knight",
+        "imdb_ranking": "3",
+        "imdb_rating": "9.0",
+        "rt_rating": "94"
     },
     {
-        "tytul_filmu": "12 Angry Men",
-        "ranking_imdb": "5",
-        "ocena_imdb": "9.0",
-        "ocena_rotten_tomatoes": "93"
+        "title": "12 Angry Men",
+        "imdb_ranking": "5",
+        "imdb_rating": "9.0",
+        "rt_rating": "93"
     },
     {
-        "tytul_filmu": "Schindler's List",
-        "ranking_imdb": "6",
-        "ocena_imdb": "9.0",
-        "ocena_rotten_tomatoes": "98"
+        "title": "Schindler's List",
+        "imdb_ranking": "6",
+        "imdb_rating": "9.0",
+        "rt_rating": "98"
     },
     {
-        "tytul_filmu": "The Lord of the Rings: The Return of the King",
-        "ranking_imdb": "7",
-        "ocena_imdb": "9.0",
-        "ocena_rotten_tomatoes": "94"
+        "title": "The Lord of the Rings: The Return of the King",
+        "imdb_ranking": "7",
+        "imdb_rating": "9.0",
+        "rt_rating": "94"
     },
     {
-        "tytul_filmu": "Pulp Fiction",
-        "ranking_imdb": "8",
-        "ocena_imdb": "8.9",
-        "ocena_rotten_tomatoes": "92"
+        "title": "Pulp Fiction",
+        "imdb_ranking": "8",
+        "imdb_rating": "8.9",
+        "rt_rating": "92"
     },
     {
-        "tytul_filmu": "The Lord of the Rings: The Fellowship of the Ring",
-        "ranking_imdb": "9",
-        "ocena_imdb": "8.9",
-        "ocena_rotten_tomatoes": "91"
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "imdb_ranking": "9",
+        "imdb_rating": "8.9",
+        "rt_rating": "91"
     },
     {
-        "tytul_filmu": "The Good, the Bad and the Ugly",
-        "ranking_imdb": "10",
-        "ocena_imdb": "8.8",
-        "ocena_rotten_tomatoes": "97"
+        "title": "The Good, the Bad and the Ugly",
+        "imdb_ranking": "10",
+        "imdb_rating": "8.8",
+        "rt_rating": "97"
     },
     {
-        "tytul_filmu": "Forrest Gump",
-        "ranking_imdb": "11",
-        "ocena_imdb": "8.8",
-        "ocena_rotten_tomatoes": "76"
+        "title": "Forrest Gump",
+        "imdb_ranking": "11",
+        "imdb_rating": "8.8",
+        "rt_rating": "76"
+    },
+    {
+        "title": "The Lord of the Rings: The Two Towers",
+        "imdb_ranking": "12",
+        "imdb_rating": "8.8",
+        "rt_rating": "95"
+    },
+    {
+        "title": "Inception",
+        "imdb_ranking": "14",
+        "imdb_rating": "8.8",
+        "rt_rating": "87"
+    },
+    {
+        "title": "Dune: Part Two",
+        "imdb_ranking": "15",
+        "imdb_rating": "8.8",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Star Wars: Episode V - The Empire Strikes Back",
+        "imdb_ranking": "16",
+        "imdb_rating": "8.7",
+        "rt_rating": "95"
+    },
+    {
+        "title": "The Matrix",
+        "imdb_ranking": "17",
+        "imdb_rating": "8.7",
+        "rt_rating": "83"
+    },
+    {
+        "title": "Goodfellas",
+        "imdb_ranking": "18",
+        "imdb_rating": "8.7",
+        "rt_rating": "95"
+    },
+    {
+        "title": "One Flew Over the Cuckoo's Nest",
+        "imdb_ranking": "19",
+        "imdb_rating": "8.7",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Interstellar",
+        "imdb_ranking": "21",
+        "imdb_rating": "8.7",
+        "rt_rating": "73"
+    },
+    {
+        "title": "Seven Samurai",
+        "imdb_ranking": "23",
+        "imdb_rating": "8.6",
+        "rt_rating": "100"
+    },
+    {
+        "title": "The Silence of the Lambs",
+        "imdb_ranking": "24",
+        "imdb_rating": "8.6",
+        "rt_rating": "95"
+    },
+    {
+        "title": "Saving Private Ryan",
+        "imdb_ranking": "25",
+        "imdb_rating": "8.6",
+        "rt_rating": "94"
+    },
+    {
+        "title": "City of God",
+        "imdb_ranking": "26",
+        "imdb_rating": "8.6",
+        "rt_rating": "91"
+    },
+    {
+        "title": "The Green Mile",
+        "imdb_ranking": "28",
+        "imdb_rating": "8.6",
+        "rt_rating": "79"
+    },
+    {
+        "title": "Terminator 2: Judgment Day",
+        "imdb_ranking": "29",
+        "imdb_rating": "8.6",
+        "rt_rating": "91"
+    },
+    {
+        "title": "Star Wars: Episode IV - A New Hope",
+        "imdb_ranking": "30",
+        "imdb_rating": "8.6",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Back to the Future",
+        "imdb_ranking": "31",
+        "imdb_rating": "8.5",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Spirited Away",
+        "imdb_ranking": "32",
+        "imdb_rating": "8.6",
+        "rt_rating": "96"
+    },
+    {
+        "title": "The Pianist",
+        "imdb_ranking": "33",
+        "imdb_rating": "8.5",
+        "rt_rating": "95"
+    },
+    {
+        "title": "Parasite",
+        "imdb_ranking": "34",
+        "imdb_rating": "8.5",
+        "rt_rating": "99"
+    },
+    {
+        "title": "Spider-Man: Across the Spider-Verse",
+        "imdb_ranking": "35",
+        "imdb_rating": "8.6",
+        "rt_rating": "95"
+    },
+    {
+        "title": "Gladiator",
+        "imdb_ranking": "37",
+        "imdb_rating": "8.5",
+        "rt_rating": "79"
+    },
+    {
+        "title": "The Lion King",
+        "imdb_ranking": "38",
+        "imdb_rating": "8.5",
+        "rt_rating": "52"
+    },
+    {
+        "title": "The Departed",
+        "imdb_ranking": "40",
+        "imdb_rating": "8.5",
+        "rt_rating": "91"
+    },
+    {
+        "title": "American History X",
+        "imdb_ranking": "41",
+        "imdb_rating": "8.5",
+        "rt_rating": "84"
+    },
+    {
+        "title": "Whiplash",
+        "imdb_ranking": "42",
+        "imdb_rating": "8.5",
+        "rt_rating": "94"
+    },
+    {
+        "title": "The Prestige",
+        "imdb_ranking": "43",
+        "imdb_rating": "8.5",
+        "rt_rating": "77"
+    },
+    {
+        "title": "Grave of the Fireflies",
+        "imdb_ranking": "44",
+        "imdb_rating": "8.5",
+        "rt_rating": "100"
+    },
+    {
+        "title": "The Usual Suspects",
+        "imdb_ranking": "46",
+        "imdb_rating": "8.5",
+        "rt_rating": "88"
+    },
+    {
+        "title": "The Intouchables",
+        "imdb_ranking": "48",
+        "imdb_rating": "8.5",
+        "rt_rating": "76"
+    },
+    {
+        "title": "Cinema Paradiso",
+        "imdb_ranking": "49",
+        "imdb_rating": "8.5",
+        "rt_rating": "90"
+    },
+    {
+        "title": "Modern Times",
+        "imdb_ranking": "50",
+        "imdb_rating": "8.5",
+        "rt_rating": "98"
+    },
+    {
+        "title": "Rear Window",
+        "imdb_ranking": "51",
+        "imdb_rating": "8.5",
+        "rt_rating": "46"
+    },
+    {
+        "title": "Once Upon a Time in the West",
+        "imdb_ranking": "52",
+        "imdb_rating": "8.5",
+        "rt_rating": "96"
+    },
+    {
+        "title": "Alien",
+        "imdb_ranking": "53",
+        "imdb_rating": "8.5",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Apocalypse Now",
+        "imdb_ranking": "55",
+        "imdb_rating": "8.4",
+        "rt_rating": "97"
+    },
+    {
+        "title": "Django Unchained",
+        "imdb_ranking": "56",
+        "imdb_rating": "8.5",
+        "rt_rating": "87"
+    },
+    {
+        "title": "12th Fail",
+        "imdb_ranking": "57",
+        "imdb_rating": "9.0",
+        "rt_rating": "91"
+    },
+    {
+        "title": "Memento",
+        "imdb_ranking": "58",
+        "imdb_rating": "8.4",
+        "rt_rating": "94"
+    },
+    {
+        "title": "Raiders of the Lost Ark",
+        "imdb_ranking": "60",
+        "imdb_rating": "8.4",
+        "rt_rating": "93"
+    },
+    {
+        "title": "The Lives of Others",
+        "imdb_ranking": "61",
+        "imdb_rating": "8.4",
+        "rt_rating": "92"
+    },
+    {
+        "title": "Paths of Glory",
+        "imdb_ranking": "63",
+        "imdb_rating": "8.4",
+        "rt_rating": "96"
+    },
+    {
+        "title": "Avengers: Infinity War",
+        "imdb_ranking": "64",
+        "imdb_rating": "8.4",
+        "rt_rating": "85"
+    },
+    {
+        "title": "Spider-Man: Into the Spider-Verse",
+        "imdb_ranking": "65",
+        "imdb_rating": "8.4",
+        "rt_rating": "97"
+    },
+    {
+        "title": "The Shining",
+        "imdb_ranking": "66",
+        "imdb_rating": "8.4",
+        "rt_rating": "83"
+    },
+    {
+        "title": "The Great Dictator",
+        "imdb_ranking": "68",
+        "imdb_rating": "8.4",
+        "rt_rating": "92"
+    },
+    {
+        "title": "Aliens",
+        "imdb_ranking": "69",
+        "imdb_rating": "8.4",
+        "rt_rating": "98"
+    },
+    {
+        "title": "Inglourious Basterds",
+        "imdb_ranking": "70",
+        "imdb_rating": "8.4",
+        "rt_rating": "89"
+    },
+    {
+        "title": "The Dark Knight Rises",
+        "imdb_ranking": "71",
+        "imdb_rating": "8.4",
+        "rt_rating": "87"
+    },
+    {
+        "title": "American Beauty",
+        "imdb_ranking": "73",
+        "imdb_rating": "8.3",
+        "rt_rating": "87"
+    },
+    {
+        "title": "Oldboy",
+        "imdb_ranking": "74",
+        "imdb_rating": "8.3",
+        "rt_rating": "39"
+    },
+    {
+        "title": "Amadeus",
+        "imdb_ranking": "76",
+        "imdb_rating": "8.4",
+        "rt_rating": "89"
+    },
+    {
+        "title": "Toy Story",
+        "imdb_ranking": "77",
+        "imdb_rating": "8.3",
+        "rt_rating": "100"
+    },
+    {
+        "title": "Braveheart",
+        "imdb_ranking": "79",
+        "imdb_rating": "8.3",
+        "rt_rating": "76"
+    },
+    {
+        "title": "Avengers: Endgame",
+        "imdb_ranking": "80",
+        "imdb_rating": "8.4",
+        "rt_rating": "94"
+    },
+    {
+        "title": "Joker",
+        "imdb_ranking": "81",
+        "imdb_rating": "8.4",
+        "rt_rating": "69"
+    },
+    {
+        "title": "Princess Mononoke",
+        "imdb_ranking": "82",
+        "imdb_rating": "8.3",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Good Will Hunting",
+        "imdb_ranking": "83",
+        "imdb_rating": "8.3",
+        "rt_rating": "97"
+    },
+    {
+        "title": "Once Upon a Time in America",
+        "imdb_ranking": "85",
+        "imdb_rating": "8.3",
+        "rt_rating": "87"
+    },
+    {
+        "title": "High and Low",
+        "imdb_ranking": "86",
+        "imdb_rating": "8.4",
+        "rt_rating": "96"
+    },
+    {
+        "title": "Singin' in the Rain",
+        "imdb_ranking": "88",
+        "imdb_rating": "8.3",
+        "rt_rating": "100"
+    },
+    {
+        "title": "Oppenheimer",
+        "imdb_ranking": "89",
+        "imdb_rating": "8.3",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Capernaum",
+        "imdb_ranking": "90",
+        "imdb_rating": "8.4",
+        "rt_rating": "90"
+    },
+    {
+        "title": "Requiem for a Dream",
+        "imdb_ranking": "91",
+        "imdb_rating": "8.3",
+        "rt_rating": "78"
+    },
+    {
+        "title": "Come and See",
+        "imdb_ranking": "92",
+        "imdb_rating": "8.4",
+        "rt_rating": "90"
+    },
+    {
+        "title": "Toy Story 3",
+        "imdb_ranking": "93",
+        "imdb_rating": "8.3",
+        "rt_rating": "98"
+    },
+    {
+        "title": "Star Wars: Episode VI - Return of the Jedi",
+        "imdb_ranking": "94",
+        "imdb_rating": "8.3",
+        "rt_rating": "83"
+    },
+    {
+        "title": "Eternal Sunshine of the Spotless Mind",
+        "imdb_ranking": "95",
+        "imdb_rating": "8.3",
+        "rt_rating": "92"
+    },
+    {
+        "title": "2001: A Space Odyssey",
+        "imdb_ranking": "97",
+        "imdb_rating": "8.3",
+        "rt_rating": "92"
+    },
+    {
+        "title": "Reservoir Dogs",
+        "imdb_ranking": "98",
+        "imdb_rating": "8.3",
+        "rt_rating": "90"
+    },
+    {
+        "title": "Ikiru",
+        "imdb_ranking": "99",
+        "imdb_rating": "8.3",
+        "rt_rating": "98"
+    },
+    {
+        "title": "Lawrence of Arabia",
+        "imdb_ranking": "100",
+        "imdb_rating": "8.3",
+        "rt_rating": "94"
+    },
+    {
+        "title": "North by Northwest",
+        "imdb_ranking": "102",
+        "imdb_rating": "8.3",
+        "rt_rating": "97"
+    },
+    {
+        "title": "Citizen Kane",
+        "imdb_ranking": "103",
+        "imdb_rating": "8.3",
+        "rt_rating": "99"
+    },
+    {
+        "title": "Incendies",
+        "imdb_ranking": "106",
+        "imdb_rating": "8.3",
+        "rt_rating": "91"
+    },
+    {
+        "title": "Scarface",
+        "imdb_ranking": "108",
+        "imdb_rating": "8.3",
+        "rt_rating": "79"
+    },
+    {
+        "title": "Am\u00e9lie",
+        "imdb_ranking": "109",
+        "imdb_rating": "8.3",
+        "rt_rating": "90"
+    },
+    {
+        "title": "Full Metal Jacket",
+        "imdb_ranking": "110",
+        "imdb_rating": "8.3",
+        "rt_rating": "90"
+    },
+    {
+        "title": "A Clockwork Orange",
+        "imdb_ranking": "111",
+        "imdb_rating": "8.3",
+        "rt_rating": "87"
+    },
+    {
+        "title": "Up",
+        "imdb_ranking": "113",
+        "imdb_rating": "8.3",
+        "rt_rating": "98"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "imdb_ranking": "114",
+        "imdb_rating": "8.3",
+        "rt_rating": "93"
+    },
+    {
+        "title": "The Sting",
+        "imdb_ranking": "115",
+        "imdb_rating": "8.3",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Indiana Jones and the Last Crusade",
+        "imdb_ranking": "117",
+        "imdb_rating": "8.2",
+        "rt_rating": "84"
+    },
+    {
+        "title": "Die Hard",
+        "imdb_ranking": "118",
+        "imdb_rating": "8.2",
+        "rt_rating": "94"
+    },
+    {
+        "title": "Metropolis",
+        "imdb_ranking": "119",
+        "imdb_rating": "8.3",
+        "rt_rating": "87"
+    },
+    {
+        "title": "Like Stars on Earth",
+        "imdb_ranking": "120",
+        "imdb_rating": "8.3",
+        "rt_rating": "93"
+    },
+    {
+        "title": "Hamilton",
+        "imdb_ranking": "121",
+        "imdb_rating": "8.3",
+        "rt_rating": "98"
+    },
+    {
+        "title": "Snatch",
+        "imdb_ranking": "122",
+        "imdb_rating": "8.2",
+        "rt_rating": "74"
+    },
+    {
+        "title": "L.A. Confidential",
+        "imdb_ranking": "123",
+        "imdb_rating": "8.2",
+        "rt_rating": "99"
+    },
+    {
+        "title": "1917",
+        "imdb_ranking": "125",
+        "imdb_rating": "8.2",
+        "rt_rating": "89"
+    },
+    {
+        "title": "For a Few Dollars More",
+        "imdb_ranking": "129",
+        "imdb_rating": "8.2",
+        "rt_rating": "92"
     }
 ]
