@@ -1,3 +1,4 @@
+import ssl
 import requests
 from bs4 import BeautifulSoup
 import urllib.robotparser
@@ -5,10 +6,9 @@ import re
 import urllib.parse
 import json
 
-# refactor function names
 # refactor code
-# add checking robots.txt
 
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3', 'Accept-Language': 'en-US,en;q=0.9'}
 class Movie:
     def __init__(self, ranking, title, rating):
         self.ranking = ranking
@@ -18,9 +18,7 @@ class Movie:
     def __str__(self):
         return f"{self.ranking}. {self.title}, rating: {self.rating}"
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3', 'Accept-Language': 'en-US,en;q=0.9'}
-
-def createMovieJsonObject(movie1, movie2):
+def create_movie_json_object(movie1, movie2):
     final_result = {
         "tytul_filmu": movie1.title,
         "ranking_imdb": movie1.ranking,
@@ -30,17 +28,20 @@ def createMovieJsonObject(movie1, movie2):
 
     return final_result
 
-def checkIfScrapingIsPossible():
+def check_if_scraping_is_possible(url):
+    parsed_url = urllib.parse.urlparse(url)
+    domain = parsed_url.scheme + "://" + parsed_url.netloc
+
     rp = urllib.robotparser.RobotFileParser() 
-    rp.set_url("https://example.com/robots.txt")
+    rp.set_url(f"{domain}/robots.txt")
     rp.read()
 
-    if rp.can_fetch("MyBot", "https://example.com/page-to-scrape"):
-        print("Scraping is allowed for this URL") 
+    if rp.can_fetch("MyBot", url):
+        print(f"Scraping is allowed for URL: {url}") 
     else:
-        print("Scraping is not allowed for this URL according to robots.txt")
+        print(f"Scraping is not allowed for this URL: {url} according to robots.txt")
         
-def getMovieFrom2FilmDatabase(search_url, movie_title):
+def get_movie_from_2_filmdb(search_url, movie_title):
     encoded_title = urllib.parse.quote(movie_title)
     response = requests.get(search_url + encoded_title, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -65,7 +66,7 @@ def getMovieFrom2FilmDatabase(search_url, movie_title):
 
     return None
 
-def getMoviesFrom1FilmDatabase(url):
+def get_movies_from_1_filmdb(url):
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -91,20 +92,23 @@ def getMoviesFrom1FilmDatabase(url):
     
 print("Web scraping has been started")
 
-firstMovieDbUrl = 'https://www.imdb.com/chart/top/?ref_=nv_mv_250&sort=rank%2Casc'
-secondMovieDbUrl = 'https://www.rottentomatoes.com/search?search='
+first_movie_db_url = 'https://www.imdb.com/chart/top/?ref_=nv_mv_250&sort=rank%2Casc'
+second_movie_db_url = 'https://www.rottentomatoes.com/search?search='
 
-movies = getMoviesFrom1FilmDatabase(firstMovieDbUrl)
+check_if_scraping_is_possible(first_movie_db_url)
+check_if_scraping_is_possible(second_movie_db_url)
+
+movies = get_movies_from_1_filmdb(first_movie_db_url)
 
 results_data = []
 
 movie_result_counter = 0
 for movie_1 in movies:
-    movie_2 =  getMovieFrom2FilmDatabase(secondMovieDbUrl, movie_1.title)
+    movie_2 =  get_movie_from_2_filmdb(second_movie_db_url, movie_1.title)
     if movie_2 is None or movie_2.rating == "":
         continue
     else:
-        results_data.append(createMovieJsonObject(movie_1, movie_2))
+        results_data.append(create_movie_json_object(movie_1, movie_2))
         movie_result_counter += 1
         print("Added successfully record for movie: ", movie_1.title)
     
