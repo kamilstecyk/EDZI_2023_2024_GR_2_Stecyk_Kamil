@@ -6,6 +6,7 @@ from typing import List
 from typing import Tuple
 import re
 import sys
+import html
 
 class OfferScraperPracuj(OfferScraper):
     __SOURCE = 'it.pracuj.pl'
@@ -17,7 +18,9 @@ class OfferScraperPracuj(OfferScraper):
         try:
             super().check_if_scraping_is_possible(self._url_to_scrap)
             response = requests.get(self._url_to_scrap, headers=self._headers)
-            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+            response.encoding = response.apparent_encoding
+
+            soup = BeautifulSoup(response.text, 'html.parser')
 
             section_offers_div = soup.find('div', {'data-test': 'section-offers'})
 
@@ -47,7 +50,9 @@ class OfferScraperPracuj(OfferScraper):
     def get_offer(self, offer_url) -> Offer:
         try:
             response = requests.get(offer_url, headers=self._headers)
-            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+            response.encoding = response.apparent_encoding
+
+            soup = BeautifulSoup(response.text, 'html.parser')
 
             job_offer_id = OfferScraperPracuj.__extract_offer_id_from_offer_url(offer_url)
 
@@ -55,7 +60,7 @@ class OfferScraperPracuj(OfferScraper):
             job_offer_url = offer_url
 
             job_position = soup.find('h1', {'data-test': 'text-positionName'}).text.strip()
-            job_company = soup.find('h2', {'data-test': 'text-employerName'}).text.strip()
+            job_company = ''.join(soup.find('h2', {'data-test': 'text-employerName'}).find_all(text=True, recursive=False)).strip()
             job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
             job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
 
@@ -100,7 +105,7 @@ class OfferScraperPracuj(OfferScraper):
         max_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueTo'})
 
         salary_amount_unit = html_section_to_parse.find('span', {'data-test': 'text-earningAmountUnit'}).text
-        currency = OfferScraper.get_currency(max_salary.text)
+        currency = OfferScraper.get_currency(html.unescape(max_salary.get_text()))
 
         min_salary_value = OfferScraper.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraper.convert_string_to_float_number(max_salary.text)
         max_salary_value = OfferScraper.convert_string_to_float_number(max_salary.text)

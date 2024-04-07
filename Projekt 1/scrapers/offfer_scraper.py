@@ -37,6 +37,10 @@ class OfferScraper():
 
         if currency_match:
             currency = currency_match.group(1)
+
+            if(currency == 'z'):
+                currency = 'zł'
+
             return currency
        
         return None

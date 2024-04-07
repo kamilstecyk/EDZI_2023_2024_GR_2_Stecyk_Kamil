@@ -5,7 +5,7 @@ import json
 def write_data_to_json(file_path, data):
     try:
         with open(file_path, 'w') as json_file:
-            json.dump(data, json_file, indent=4)
+            json.dump(data, json_file, indent=4, ensure_ascii=False)
         print(f"Offers has been written successfully to json file {file_path}")
     except IOError as e:
         print(f"Error writing to file: {e}")
