@@ -6,6 +6,7 @@ def write_data_to_json(file_path, data):
     try:
         with open(file_path, 'w') as json_file:
             json.dump(data, json_file, indent=4)
+        print(f"Offers has been written successfully to json file {file_path}")
     except IOError as e:
         print(f"Error writing to file: {e}")
 
@@ -19,7 +20,6 @@ def main():
     offers_dicts = [offer.to_dict() for offer in offers]
     json_file_path = 'pracujpl-results.json'
     write_data_to_json(json_file_path, offers_dicts)
-    print(f"Offers has been written to json file {json_file_path}")
 
     print("Scraping has finished.")
 
