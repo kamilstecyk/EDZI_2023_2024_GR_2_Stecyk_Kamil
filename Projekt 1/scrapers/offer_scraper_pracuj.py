@@ -62,7 +62,6 @@ class OfferScraperPracuj(OfferScraper):
             job_position = soup.find('h1', {'data-test': 'text-positionName'}).text.strip()
             job_company = ''.join(soup.find('h2', {'data-test': 'text-employerName'}).find_all(text=True, recursive=False)).strip()
             job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
-            job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
 
             job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.get_offer_sallary_info(soup)
             job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
@@ -90,16 +89,6 @@ class OfferScraperPracuj(OfferScraper):
         return None
     
     @staticmethod
-    def __get_final_salary(salary: str, salary_amount_unit: str) -> float:
-        if('hr.' in salary_amount_unit or 'godz.' in salary_amount_unit):
-                salary *= 168
-           
-        if('net' in salary_amount_unit):
-                salary *= 1.23
-        
-        return salary
-    
-    @staticmethod
     def __get_salary_details(html_section_to_parse) -> Tuple[float, float, str]:
         min_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueFrom'})
         max_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueTo'})
@@ -110,8 +99,8 @@ class OfferScraperPracuj(OfferScraper):
         min_salary_value = OfferScraper.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraper.convert_string_to_float_number(max_salary.text)
         max_salary_value = OfferScraper.convert_string_to_float_number(max_salary.text)
 
-        min_salary_value = OfferScraperPracuj.__get_final_salary(min_salary_value, salary_amount_unit)
-        max_salary_value = OfferScraperPracuj.__get_final_salary(max_salary_value, salary_amount_unit)
+        min_salary_value = OfferScraper.get_final_salary(min_salary_value, salary_amount_unit)
+        max_salary_value = OfferScraper.get_final_salary(max_salary_value, salary_amount_unit)
 
         return min_salary_value, max_salary_value, currency
     

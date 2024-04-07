@@ -67,6 +67,20 @@ class OfferScraper():
                 max_seniority_level = level.strip().lower()
 
         return max_seniority_level
+    
+    @staticmethod
+    def get_final_salary(salary: str, salary_amount_unit: str) -> float:
+        if('hr.' in salary_amount_unit.lower() or 'godz.' in salary_amount_unit.lower() or OfferScraper.is_less_than_4_digit(salary)):
+                salary *= 168
+           
+        if('net' in salary_amount_unit.lower()):
+                salary *= 1.23
+        
+        return salary
+    
+    @staticmethod
+    def is_less_than_4_digit(number):
+        return len(str(number)) < 4
 
     def get_offers(self) -> List[offer.Offer]:
         pass
