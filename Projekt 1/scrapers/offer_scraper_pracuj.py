@@ -130,6 +130,34 @@ class OfferScraperPracuj(OfferScraper):
        
         return OfferScraperPracuj.__get_salary_details(soup)
     
+    @staticmethod
+    def __get_seniority(html_to_parse, offer_url) -> str:
+        seniority_levels_tag = html_to_parse.find('div', {'data-test': 'sections-benefit-employment-type-name-text'})
+
+        if seniority_levels_tag:
+           return OfferScraperPracuj.get_max_seniority(seniority_levels_tag.text)
+        else:
+            print(f"Could not find seniority for offer {offer_url}")
+
+        return None
+    
+    @staticmethod
+    def get_max_seniority(given_seniority_levels: str) -> str:
+        seniority_levels = ['junior', 'regular', 'mid', 'senior']
+        pattern = re.compile(r'\b(?:senior|mid|regular|junior)\b', re.IGNORECASE | re.MULTILINE)
+
+        levels_found = pattern.findall(given_seniority_levels)
+        max_seniority_level = None
+
+        for level in levels_found:
+            index = seniority_levels.index(level.strip().lower())
+            
+            if max_seniority_level is None or index > seniority_levels.index(max_seniority_level):
+                max_seniority_level = level.strip().lower()
+
+        return max_seniority_level
+
+
     def __get_offer(self, offer_url) -> Offer:
         try:
             response = requests.get(offer_url, headers=self.headers)
@@ -146,7 +174,7 @@ class OfferScraperPracuj(OfferScraper):
             job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
             
             job_category = soup.find('span', class_='offer-viewPFKc0t').text
-            job_seniority = None
+            job_seniority = OfferScraperPracuj.__get_seniority(soup, job_offer_url)
 
             print(job_offer_id)
             print(job_source)
@@ -167,3 +195,4 @@ class OfferScraperPracuj(OfferScraper):
             return None
 
         return None
+    
