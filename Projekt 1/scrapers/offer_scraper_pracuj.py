@@ -36,43 +36,6 @@ class OfferScraperPracuj(OfferScraper):
         except Exception as e:
             print(f"An error occurred while getting offers from {self.url_to_scrap}: {e}")
             return []
-
-        return []
-    
-    def __get_offer(self, offer_url) -> Offer:
-        try:
-            response = requests.get(offer_url, headers=self.headers)
-            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
-
-            job_offer_id = OfferScraperPracuj.extract_offer_id_from_offer_url(offer_url)
-            job_source = self.SOURCE
-            job_offer_url = offer_url
-            job_position = soup.find('h1', {'data-test': 'text-positionName'}).text
-            job_company = soup.find('h2', {'data-test': 'text-employerName'}).text
-
-            job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.get_offer_sallary_info(soup)
-
-            skills = None
-            job_category = soup.find('span', class_='offer-viewPFKc0t').text
-            job_seniority = None
-
-            print(job_offer_id)
-            print(job_source)
-            print(job_offer_url)
-            print(job_position)
-            print(job_company)
-            print(job_min_salary)
-            print(job_max_salary)
-            print(job_salary_currency)
-            print(job_category)
-            print("\n")
-
-            
-        except Exception as e:
-            print(f"An error occurred while getting offer from {offer_url}: {e}")
-            return None
-
-        return None
     
     @staticmethod
     def extract_offer_id_from_offer_url(url):
@@ -84,30 +47,6 @@ class OfferScraperPracuj(OfferScraper):
             return offer_id
         
         return None
-    
-    @staticmethod
-    def get_offer_sallary_info(soup: BeautifulSoup) -> Tuple[float, float, str]:
-        salaries_per_contract_type = soup.findAll('div', {'data-test': 'section-salaryPerContractType'})
-
-        # this means that we have more than one contract type like B2B contract and contract of employement
-        if(len(salaries_per_contract_type) > 0):
-            min_salary_value = sys.maxsize
-            max_salary_value = -sys.maxsize
-            currency = None
-
-            for salary_per_contract_section in salaries_per_contract_type:
-                currently_min_salary_value, currently_max_salary_value, currency = OfferScraperPracuj.get_salary_details(salary_per_contract_section)
-
-                if(currently_min_salary_value < min_salary_value):
-                    min_salary_value = currently_min_salary_value
-
-                if(currently_max_salary_value > max_salary_value):
-                    max_salary_value = currently_max_salary_value
-
-            return min_salary_value, max_salary_value, currency
-       
-        return OfferScraperPracuj.get_salary_details(soup)
-
 
     @staticmethod
     def convert_string_to_float_number(dirty_number: str) -> float:
@@ -128,7 +67,7 @@ class OfferScraperPracuj(OfferScraper):
         return None
     
     @staticmethod
-    def get_final_salary(salary: str, salary_amount_unit: str) -> float:
+    def __get_final_salary(salary: str, salary_amount_unit: str) -> float:
         if('hr.' in salary_amount_unit or 'godz.' in salary_amount_unit):
                 salary *= 168
            
@@ -138,7 +77,7 @@ class OfferScraperPracuj(OfferScraper):
         return salary
     
     @staticmethod
-    def get_salary_details(html_section_to_parse) -> Tuple[float, float, str]:
+    def __get_salary_details(html_section_to_parse) -> Tuple[float, float, str]:
         min_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueFrom'})
         max_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueTo'})
 
@@ -148,7 +87,83 @@ class OfferScraperPracuj(OfferScraper):
         min_salary_value = OfferScraperPracuj.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
         max_salary_value = OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
 
-        min_salary_value = OfferScraperPracuj.get_final_salary(min_salary_value, salary_amount_unit)
-        max_salary_value = OfferScraperPracuj.get_final_salary(max_salary_value, salary_amount_unit)
+        min_salary_value = OfferScraperPracuj.__get_final_salary(min_salary_value, salary_amount_unit)
+        max_salary_value = OfferScraperPracuj.__get_final_salary(max_salary_value, salary_amount_unit)
 
         return min_salary_value, max_salary_value, currency
+    
+    @staticmethod
+    def __get_skills(html_section_to_parse, job_offer_url) -> List[str]:
+        skills_section = html_section_to_parse.find('div', {'data-test': 'section-technologies-expected'})
+        skills = []
+
+        if skills_section:
+            skills_tags = skills_section.find_all('p', {'data-test': 'text-technology-name'})
+            
+            for skill_tag in skills_tags:
+                skills.append(skill_tag.text)
+        else:
+            print(f"Skills could not be found for offer {job_offer_url}")
+
+        return skills
+    
+    @staticmethod
+    def __get_offer_sallary_info(soup: BeautifulSoup) -> Tuple[float, float, str]:
+        salaries_per_contract_type = soup.findAll('div', {'data-test': 'section-salaryPerContractType'})
+
+        # this means that we have more than one contract type like B2B contract and contract of employement
+        if(len(salaries_per_contract_type) > 0):
+            min_salary_value = sys.maxsize
+            max_salary_value = -sys.maxsize
+            currency = None
+
+            for salary_per_contract_section in salaries_per_contract_type:
+                currently_min_salary_value, currently_max_salary_value, currency = OfferScraperPracuj.__get_salary_details(salary_per_contract_section)
+
+                if(currently_min_salary_value < min_salary_value):
+                    min_salary_value = currently_min_salary_value
+
+                if(currently_max_salary_value > max_salary_value):
+                    max_salary_value = currently_max_salary_value
+
+            return min_salary_value, max_salary_value, currency
+       
+        return OfferScraperPracuj.__get_salary_details(soup)
+    
+    def __get_offer(self, offer_url) -> Offer:
+        try:
+            response = requests.get(offer_url, headers=self.headers)
+            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+
+            job_offer_id = OfferScraperPracuj.extract_offer_id_from_offer_url(offer_url)
+            job_source = self.SOURCE
+            job_offer_url = offer_url
+            job_position = soup.find('h1', {'data-test': 'text-positionName'}).text
+            job_company = soup.find('h2', {'data-test': 'text-employerName'}).text
+
+            job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.__get_offer_sallary_info(soup)
+
+            job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
+            
+            job_category = soup.find('span', class_='offer-viewPFKc0t').text
+            job_seniority = None
+
+            print(job_offer_id)
+            print(job_source)
+            print(job_offer_url)
+            print(job_position)
+            print(job_company)
+            print(job_min_salary)
+            print(job_max_salary)
+            print(job_salary_currency)
+            print(job_skills)
+            print(job_category)
+            print(job_seniority)
+            print("\n")
+
+            
+        except Exception as e:
+            print(f"An error occurred while getting offer from {offer_url}: {e}")
+            return None
+
+        return None
