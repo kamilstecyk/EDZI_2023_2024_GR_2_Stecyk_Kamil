@@ -14,24 +14,22 @@ def write_data_to_json(file_path, data):
 def main():
     print('Script has started...')
 
-    # pracuj.pl part
-    # url_to_scrap_pracuj = 'https://it.pracuj.pl/praca/krakow;wp?rd=0&et=17%2C4%2C18&sal=1&sc=0&its=big-data-science&iwhpl=false'
-    # pracuj_scraper = OfferScraperPracuj(url_to_scrap_pracuj)
-    # offers = pracuj_scraper.get_offers()
-
-    # offers_dicts = [offer.to_dict() for offer in offers]
-    # json_file_path = 'pracujpl-results.json'
-    # write_data_to_json(json_file_path, offers_dicts)
-    
-    # just join it part
-
+    url_to_scrap_pracuj = 'https://it.pracuj.pl/praca/krakow;wp?rd=0&et=17%2C4%2C18&sal=1&sc=0&its=big-data-science&iwhpl=false'
     url_to_scrap_just_join_it = 'https://justjoin.it/krakow/data/experience-level_junior.mid.senior/salary_1.100000/with-salary_yes?orderBy=DESC&sortBy=newest'
-    just_join_it_scraper = OfferScraperJustJoinIt(url_to_scrap_just_join_it)
-    just_join_it_offers = just_join_it_scraper.get_offers()
 
-    just_join_it_offers_dicts = [offer.to_dict() for offer in just_join_it_offers]
-    json_file_path = 'pracujpl-results.json'
-    write_data_to_json(json_file_path, just_join_it_offers_dicts)
+    scrapers = [OfferScraperPracuj(url_to_scrap_pracuj), OfferScraperJustJoinIt(url_to_scrap_just_join_it)]
+
+    merged_offers = []
+
+    for scraper in scrapers:
+        offers = scraper.get_offers()
+        offers_dicts = [offer.to_dict() for offer in offers]
+
+        for offer in offers_dicts:
+            merged_offers.append(offer)
+
+    json_file_path = 'offers-results.json'
+    write_data_to_json(json_file_path, merged_offers)
 
     print("Scraping has finished.")
 

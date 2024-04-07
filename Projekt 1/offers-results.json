@@ -1,5 +1,448 @@
 [
     {
+        "id": "1003220101",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/programista-etl-ab-initio-oracle-krakow,oferta,1003220101",
+        "job_position": "Programista ETL (Ab Initio, Oracle)",
+        "company": "Prime Engineering Poland",
+        "category": "Big Data / Data Science",
+        "min_salary": 11000.0,
+        "max_salary": 27060.0,
+        "currency": "zł",
+        "skills": [
+            "PL/SQL",
+            "ETL",
+            "Oracle",
+            "SQL"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003243157",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/senior-sql-server-administrator-krakow-opolska-110,oferta,1003243157",
+        "job_position": "Senior SQL Server Administrator",
+        "company": "summ-it s.a.",
+        "category": "Big Data / Data Science",
+        "min_salary": 15990.0,
+        "max_salary": 23370.0,
+        "currency": "zł",
+        "skills": [
+            "Microsoft SQL Server",
+            "T-SQL"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003234934",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/administrator-baz-danych-oracle-krakow,oferta,1003234934",
+        "job_position": "Administrator baz danych Oracle",
+        "company": "Cyclad",
+        "category": "Big Data / Data Science",
+        "min_salary": 18450.0,
+        "max_salary": 23370.0,
+        "currency": "zł",
+        "skills": [
+            "Oracle"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003219246",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-engineer-krakow-lekarska-1,oferta,1003219246",
+        "job_position": "Data Engineer",
+        "company": "edrone Sp. z o.o.",
+        "category": "Big Data / Data Science",
+        "min_salary": 22140.0,
+        "max_salary": 29520.0,
+        "currency": "zł",
+        "skills": [
+            "AWS",
+            "RDS",
+            "DynamoDB",
+            "S3",
+            "Lambda",
+            "ECS",
+            "Athena",
+            "Redshift",
+            "Kinesis",
+            "CodeBuild",
+            "DMS",
+            "Python",
+            "SQL"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003245044",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/master-data-management-analyst-krakow-lubicz-23,oferta,1003245044",
+        "job_position": "Master Data Management Analyst",
+        "company": "Sylvamo GBSC",
+        "category": "Big Data / Data Science",
+        "min_salary": 11700.0,
+        "max_salary": 14300.0,
+        "currency": "zł",
+        "skills": [
+            "SAP"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003243733",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-engineer-krakow,oferta,1003243733",
+        "job_position": "Data Engineer",
+        "company": "ITDS Polska Sp. z o.o.",
+        "category": "Big Data / Data Science",
+        "min_salary": 24796.8,
+        "max_salary": 32029.2,
+        "currency": "zł",
+        "skills": [
+            "Google BigQuery",
+            "SQL",
+            "T-SQL",
+            "Google Cloud Platform",
+            "Ansible",
+            "Jenkins",
+            "Puppet",
+            "Chef",
+            "GitHub"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003240801",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/senior-data-analyst-krakow,oferta,1003240801",
+        "job_position": "Senior Data Analyst",
+        "company": "INFOGAIN TECHNOLOGIES SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+        "category": "Big Data / Data Science",
+        "min_salary": 26863.2,
+        "max_salary": 33062.4,
+        "currency": "zł",
+        "skills": [],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003234736",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/software-development-engineer-ii-data-fulfillment-krakow-przy-rondzie-4,oferta,1003234736",
+        "job_position": "Software Development Engineer II - Data (Fulfillment)",
+        "company": "Tesco Technology",
+        "category": "Big Data / Data Science",
+        "min_salary": 17000.0,
+        "max_salary": 36900.0,
+        "currency": "zł",
+        "skills": [
+            "Hadoop",
+            "Scala",
+            "Spark"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003205783",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/software-development-engineer-iii-data-fulfillment-krakow-przy-rondzie-4,oferta,1003205783",
+        "job_position": "Software Development Engineer III - Data (Fulfillment)",
+        "company": "Tesco Technology",
+        "category": "Big Data / Data Science",
+        "min_salary": 22000.0,
+        "max_salary": 49200.0,
+        "currency": "zł",
+        "skills": [
+            "Hadoop",
+            "Scala",
+            "Spark"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003220658",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/oracle-data-implementation-consultant-epm-pbcs-krakow,oferta,1003220658",
+        "job_position": "Oracle Data Implementation Consultant (EPM | PBCS)",
+        "company": "1dea Kośnik Sp. k.",
+        "category": "Big Data / Data Science",
+        "min_salary": 28929.6,
+        "max_salary": 32029.2,
+        "currency": "zł",
+        "skills": [
+            "Oracle",
+            "EPM",
+            "PBCS"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003240781",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/software-development-engineer-ii-data-engineering-forecasting-krakow-przy-rondzie-4,oferta,1003240781",
+        "job_position": "Software Development Engineer II - Data Engineering (Forecasting)",
+        "company": "Tesco Technology",
+        "category": "Big Data / Data Science",
+        "min_salary": 17000.0,
+        "max_salary": 36900.0,
+        "currency": "zł",
+        "skills": [
+            "Python",
+            "Hadoop",
+            "Airflow",
+            "Hbase",
+            "Hive",
+            "GitHub",
+            "Zendesk",
+            "Jira"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003234766",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/software-development-engineer-ii-data-fulfillment-krakow-przy-rondzie-4,oferta,1003234766",
+        "job_position": "Software Development Engineer II - Data (Fulfillment)",
+        "company": "Tesco Technology",
+        "category": "Big Data / Data Science",
+        "min_salary": 17000.0,
+        "max_salary": 36900.0,
+        "currency": "zł",
+        "skills": [
+            "Hadoop",
+            "Scala",
+            "Spark"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003242901",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-engineer-etl-sql-krakow,oferta,1003242901",
+        "job_position": "Data Engineer ETL, SQL",
+        "company": "Fairfield Consultancy Services Ltd",
+        "category": "Big Data / Data Science",
+        "min_salary": 36162.0,
+        "max_salary": 36162.0,
+        "currency": "zł",
+        "skills": [
+            "SQL",
+            "Oracle",
+            "Python"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003223607",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/senior-data-engineer-krakow-zablocie-43a,oferta,1003223607",
+        "job_position": "Senior Data Engineer",
+        "company": "J-LABS sp. z o.o.",
+        "category": "Big Data / Data Science",
+        "min_salary": 37195.2,
+        "max_salary": 41328.0,
+        "currency": "zł",
+        "skills": [
+            "Java",
+            "Python",
+            "SQL",
+            "Ansible",
+            "Jenkins",
+            "Github",
+            "Puppet",
+            "Chef",
+            "Terraform"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003233875",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-engineer-krakow-stanislawa-zolkiewskiego-17a,oferta,1003233875",
+        "job_position": "Data Engineer",
+        "company": "Addepto",
+        "category": "AI/ML, Big Data / Data Science",
+        "min_salary": 22140.0,
+        "max_salary": 35128.8,
+        "currency": "zł",
+        "skills": [
+            "Apache Spark",
+            "Cloudera",
+            "Data platform",
+            "Airflow",
+            "Databricks",
+            "Docker",
+            "Kubernetess",
+            "Python"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003213896",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-reporting-senior-developer-krakow,oferta,1003213896",
+        "job_position": "Data & Reporting Senior Developer",
+        "company": "Mindbox S.A.",
+        "category": "Big Data / Data Science",
+        "min_salary": 24600.0,
+        "max_salary": 30750.0,
+        "currency": "zł",
+        "skills": [
+            "SQL",
+            "Google Cloud Platform"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003207137",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-analyst-krakow,oferta,1003207137",
+        "job_position": "Data Analyst",
+        "company": "Link Group Sp. z o.o.",
+        "category": "Big Data / Data Science",
+        "min_salary": 16000.0,
+        "max_salary": 25830.0,
+        "currency": "zł",
+        "skills": [
+            "SQL",
+            "Python",
+            "Tableau",
+            "Excel"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003207130",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-scientist-krakow,oferta,1003207130",
+        "job_position": "Data Scientist",
+        "company": "Link Group Sp. z o.o.",
+        "category": "Big Data / Data Science",
+        "min_salary": 18000.0,
+        "max_salary": 29520.0,
+        "currency": "zł",
+        "skills": [
+            "Python",
+            "SQL",
+            "tSQL",
+            "Microsoft SQL Server",
+            "Power BI",
+            "Azure"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003203396",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/senior-data-analyst-krakow-kapelanka-42a,oferta,1003203396",
+        "job_position": "Senior Data Analyst",
+        "company": "Mindbox S.A.",
+        "category": "Big Data / Data Science",
+        "min_salary": 24600.0,
+        "max_salary": 30750.0,
+        "currency": "zł",
+        "skills": [
+            "SQL"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003220472",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/moody-s-regulatory-reporting-technical-liquidity-risk-krakow,oferta,1003220472",
+        "job_position": "Moody’s Regulatory Reporting Technical – Liquidity Risk",
+        "company": "Fusion Practices",
+        "category": "Big Data / Data Science, SAP&ERP",
+        "min_salary": 15000.0,
+        "max_salary": 27000.0,
+        "currency": "zł",
+        "skills": [
+            "Oracle",
+            "SQL",
+            "PL/SQL",
+            "COREP",
+            "Regulatory reporting",
+            "Liquidity risk",
+            "Moody's regulatory reporting"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003220471",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/moody-s-regulatory-reporting-functional-liquidity-risk-krakow,oferta,1003220471",
+        "job_position": "Moody’s Regulatory Reporting Functional – Liquidity Risk",
+        "company": "Fusion Practices",
+        "category": "Big Data / Data Science, SAP&ERP",
+        "min_salary": 15000.0,
+        "max_salary": 27000.0,
+        "currency": "zł",
+        "skills": [
+            "SQL",
+            "Moodys regulatory reporting",
+            "Regulatory reporting",
+            "Liquidity risk"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003211325",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/big-data-engineer-krakow,oferta,1003211325",
+        "job_position": "Big Data Engineer",
+        "company": "Mindbox S.A.",
+        "category": "Big Data / Data Science",
+        "min_salary": 34440.0,
+        "max_salary": 40590.0,
+        "currency": "zł",
+        "skills": [
+            "Jenkins",
+            "Ansible",
+            "Java",
+            "Groovy",
+            "Python",
+            "Scala",
+            "Spring boot",
+            "Spring Batch",
+            "Spring Cloud",
+            "Spring Cloud Gateway",
+            "Eureka",
+            "Apache Airflow"
+        ],
+        "seniority": "mid"
+    },
+    {
+        "id": "1003220082",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/programista-python-krakow,oferta,1003220082",
+        "job_position": "Programista Python",
+        "company": "SALES HR",
+        "category": "Backend, Big Data / Data Science",
+        "min_salary": 14760.0,
+        "max_salary": 19680.0,
+        "currency": "zł",
+        "skills": [
+            "Python"
+        ],
+        "seniority": "senior"
+    },
+    {
+        "id": "1003201533",
+        "source": "it.pracuj.pl",
+        "url": "https://www.pracuj.pl/praca/data-analyst-low-latency-trading-krakow-kupa-5,oferta,1003201533",
+        "job_position": "Data Analyst – Low-latency Trading",
+        "company": "MKM Consulting Sp. z o.o.",
+        "category": "Big Data / Data Science, Business analytics",
+        "min_salary": 10000.0,
+        "max_salary": 18450.0,
+        "currency": "zł",
+        "skills": [
+            "Python"
+        ],
+        "seniority": "mid"
+    },
+    {
         "id": null,
         "source": "justjoin.it",
         "url": "https://justjoin.it/offers/link-group-remote-senior-data-scientist-krakow-378378",
