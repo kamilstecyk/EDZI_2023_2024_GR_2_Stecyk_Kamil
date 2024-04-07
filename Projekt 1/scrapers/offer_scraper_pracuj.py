@@ -8,15 +8,15 @@ import re
 import sys
 
 class OfferScraperPracuj(OfferScraper):
-    SOURCE = 'it.pracuj.pl'
+    __SOURCE = 'it.pracuj.pl'
 
     def __init__(self, url):
         super().__init__(url) 
 
     def get_offers(self) -> List[Offer]:
         try:
-            super().check_if_scraping_is_possible(self.url_to_scrap)
-            response = requests.get(self.url_to_scrap, headers=self.headers)
+            super().check_if_scraping_is_possible(self._url_to_scrap)
+            response = requests.get(self._url_to_scrap, headers=self._headers)
             soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
 
             section_offers_div = soup.find('div', {'data-test': 'section-offers'})
@@ -24,21 +24,57 @@ class OfferScraperPracuj(OfferScraper):
             if section_offers_div:
                 links = section_offers_div.find_all('a', {'data-test': 'link-offer'})
 
+                all_offers = []
+
                 for link in links:
                     href_offer = link.get('href')
 
-                    offer = self.__get_offer(href_offer)
+                    offer = self.get_offer(href_offer)
 
-                return []
+                    if offer:
+                        all_offers.append(offer)
+                        print(offer.url)
+
+                print("Number of offers: ", len(all_offers))
+                return all_offers
             else:
                 print('Cannot find offers!')
                 return []
         except Exception as e:
-            print(f"An error occurred while getting offers from {self.url_to_scrap}: {e}")
+            print(f"An error occurred while getting offers from {self._url_to_scrap}: {e}")
             return []
+        
+    def get_offer(self, offer_url) -> Offer:
+        try:
+            response = requests.get(offer_url, headers=self._headers)
+            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+
+            job_offer_id = OfferScraperPracuj.__extract_offer_id_from_offer_url(offer_url)
+
+            job_source = self.__SOURCE
+            job_offer_url = offer_url
+
+            job_position = soup.find('h1', {'data-test': 'text-positionName'}).text.strip()
+            job_company = soup.find('h2', {'data-test': 'text-employerName'}).text.strip()
+            job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
+            job_category = soup.find('span', class_='offer-viewPFKc0t').text.strip()
+
+            job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.get_offer_sallary_info(soup)
+            job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
+            job_seniority = OfferScraperPracuj.__get_seniority(soup, job_offer_url)
+
+            offer = Offer(job_offer_id, job_source, job_offer_url)
+            offer.set_job_basic_info(job_category, job_position, job_company, job_seniority)
+            offer.set_salary(job_min_salary, job_max_salary, job_salary_currency)
+            offer.set_skills(job_skills)
+
+            return offer
+        except Exception as e:
+            print(f"An error occurred while getting offer from {offer_url}: {e}")
+            return None
     
     @staticmethod
-    def extract_offer_id_from_offer_url(url):
+    def __extract_offer_id_from_offer_url(url):
         pattern = r'oferta,(\d+)' 
         match = re.search(pattern, url)
 
@@ -46,24 +82,6 @@ class OfferScraperPracuj(OfferScraper):
             offer_id = match.group(1)
             return offer_id
         
-        return None
-
-    @staticmethod
-    def convert_string_to_float_number(dirty_number: str) -> float:
-        cleaned_number = re.sub(r'[^\d,.]', '', dirty_number)
-        cleaned_float_number = float(cleaned_number.replace(',', '.'))
-        return cleaned_float_number
-
-    #TODO fix bug
-    # there is a problem with coding 
-    @staticmethod
-    def get_currency(price: str) -> str:
-        currency_match = re.search(r'([A-Za-zł$€]+)', price)
-
-        if currency_match:
-            currency = currency_match.group(1)
-            return currency
-       
         return None
     
     @staticmethod
@@ -82,10 +100,10 @@ class OfferScraperPracuj(OfferScraper):
         max_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueTo'})
 
         salary_amount_unit = html_section_to_parse.find('span', {'data-test': 'text-earningAmountUnit'}).text
-        currency = OfferScraperPracuj.get_currency(max_salary.text)
+        currency = OfferScraper.get_currency(max_salary.text)
 
-        min_salary_value = OfferScraperPracuj.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
-        max_salary_value = OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
+        min_salary_value = OfferScraper.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraper.convert_string_to_float_number(max_salary.text)
+        max_salary_value = OfferScraper.convert_string_to_float_number(max_salary.text)
 
         min_salary_value = OfferScraperPracuj.__get_final_salary(min_salary_value, salary_amount_unit)
         max_salary_value = OfferScraperPracuj.__get_final_salary(max_salary_value, salary_amount_unit)
@@ -108,7 +126,7 @@ class OfferScraperPracuj(OfferScraper):
         return skills
     
     @staticmethod
-    def __get_offer_sallary_info(soup: BeautifulSoup) -> Tuple[float, float, str]:
+    def get_offer_sallary_info(soup: BeautifulSoup) -> Tuple[float, float, str]:
         salaries_per_contract_type = soup.findAll('div', {'data-test': 'section-salaryPerContractType'})
 
         # this means that we have more than one contract type like B2B contract and contract of employement
@@ -135,64 +153,9 @@ class OfferScraperPracuj(OfferScraper):
         seniority_levels_tag = html_to_parse.find('div', {'data-test': 'sections-benefit-employment-type-name-text'})
 
         if seniority_levels_tag:
-           return OfferScraperPracuj.get_max_seniority(seniority_levels_tag.text)
+           return OfferScraper.get_max_seniority(seniority_levels_tag.text)
         else:
             print(f"Could not find seniority for offer {offer_url}")
-
-        return None
-    
-    @staticmethod
-    def get_max_seniority(given_seniority_levels: str) -> str:
-        seniority_levels = ['junior', 'regular', 'mid', 'senior']
-        pattern = re.compile(r'\b(?:senior|mid|regular|junior)\b', re.IGNORECASE | re.MULTILINE)
-
-        levels_found = pattern.findall(given_seniority_levels)
-        max_seniority_level = None
-
-        for level in levels_found:
-            index = seniority_levels.index(level.strip().lower())
-            
-            if max_seniority_level is None or index > seniority_levels.index(max_seniority_level):
-                max_seniority_level = level.strip().lower()
-
-        return max_seniority_level
-
-
-    def __get_offer(self, offer_url) -> Offer:
-        try:
-            response = requests.get(offer_url, headers=self.headers)
-            soup = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
-
-            job_offer_id = OfferScraperPracuj.extract_offer_id_from_offer_url(offer_url)
-            job_source = self.SOURCE
-            job_offer_url = offer_url
-            job_position = soup.find('h1', {'data-test': 'text-positionName'}).text
-            job_company = soup.find('h2', {'data-test': 'text-employerName'}).text
-
-            job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.__get_offer_sallary_info(soup)
-
-            job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
-            
-            job_category = soup.find('span', class_='offer-viewPFKc0t').text
-            job_seniority = OfferScraperPracuj.__get_seniority(soup, job_offer_url)
-
-            print(job_offer_id)
-            print(job_source)
-            print(job_offer_url)
-            print(job_position)
-            print(job_company)
-            print(job_min_salary)
-            print(job_max_salary)
-            print(job_salary_currency)
-            print(job_skills)
-            print(job_category)
-            print(job_seniority)
-            print("\n")
-
-            
-        except Exception as e:
-            print(f"An error occurred while getting offer from {offer_url}: {e}")
-            return None
 
         return None
     
