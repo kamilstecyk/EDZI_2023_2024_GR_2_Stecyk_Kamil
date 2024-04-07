@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from typing import List
 from typing import Tuple
 import re
+import sys
 
 class OfferScraperPracuj(OfferScraper):
     SOURCE = 'it.pracuj.pl'
@@ -25,7 +26,6 @@ class OfferScraperPracuj(OfferScraper):
 
                 for link in links:
                     href_offer = link.get('href')
-                    print(href_offer)
 
                     offer = self.__get_offer(href_offer)
 
@@ -91,24 +91,22 @@ class OfferScraperPracuj(OfferScraper):
 
         # this means that we have more than one contract type like B2B contract and contract of employement
         if(len(salaries_per_contract_type) > 0):
+            min_salary_value = sys.maxsize
+            max_salary_value = -sys.maxsize
+            currency = None
 
-            return None
-        else:
-            salary_section = soup.find('div', {'data-test': 'section-salary'})
-            
-            min_salary = soup.find('span', {'data-test': 'text-earningAmountValueFrom'})
-            max_salary = soup.find('span', {'data-test': 'text-earningAmountValueTo'})
+            for salary_per_contract_section in salaries_per_contract_type:
+                currently_min_salary_value, currently_max_salary_value, currency = OfferScraperPracuj.get_salary_details(salary_per_contract_section)
 
-            salary_amount_unit = soup.find('span', {'data-test': 'text-earningAmountUnit'}).text
-            currency = OfferScraperPracuj.get_currency(max_salary.text)
+                if(currently_min_salary_value < min_salary_value):
+                    min_salary_value = currently_min_salary_value
 
-            min_salary_value = OfferScraperPracuj.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
-            max_salary_value = OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
-
-            min_salary_value = OfferScraperPracuj.get_final_salary(min_salary_value, salary_amount_unit)
-            max_salary_value = OfferScraperPracuj.get_final_salary(max_salary_value, salary_amount_unit)
+                if(currently_max_salary_value > max_salary_value):
+                    max_salary_value = currently_max_salary_value
 
             return min_salary_value, max_salary_value, currency
+       
+        return OfferScraperPracuj.get_salary_details(soup)
 
 
     @staticmethod
@@ -138,3 +136,19 @@ class OfferScraperPracuj(OfferScraper):
                 salary *= 1.23
         
         return salary
+    
+    @staticmethod
+    def get_salary_details(html_section_to_parse) -> Tuple[float, float, str]:
+        min_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueFrom'})
+        max_salary = html_section_to_parse.find('span', {'data-test': 'text-earningAmountValueTo'})
+
+        salary_amount_unit = html_section_to_parse.find('span', {'data-test': 'text-earningAmountUnit'}).text
+        currency = OfferScraperPracuj.get_currency(max_salary.text)
+
+        min_salary_value = OfferScraperPracuj.convert_string_to_float_number(min_salary.text) if min_salary and max_salary else OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
+        max_salary_value = OfferScraperPracuj.convert_string_to_float_number(max_salary.text)
+
+        min_salary_value = OfferScraperPracuj.get_final_salary(min_salary_value, salary_amount_unit)
+        max_salary_value = OfferScraperPracuj.get_final_salary(max_salary_value, salary_amount_unit)
+
+        return min_salary_value, max_salary_value, currency
