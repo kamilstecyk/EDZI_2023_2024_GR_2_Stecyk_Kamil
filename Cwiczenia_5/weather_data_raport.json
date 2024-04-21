@@ -1,0 +1,18 @@
+{
+    "avg_temperature": 3.49,
+    "min_temperature": 0.7,
+    "min_temperature_location": "Poznań",
+    "max_temperature": 4.9,
+    "max_temperature_location": "Białystok",
+    "measurement_datetime": "2024-04-21 20:00",
+    "avg_precipitation": 3.26,
+    "min_precipitation": 0.01,
+    "min_precipitation_location": "Poznań",
+    "max_precipitation": 8.9,
+    "max_precipitation_location": "Kielce",
+    "avg_pressure": 1020.86,
+    "min_pressure": 1016.6,
+    "min_pressure_location": "Białystok",
+    "max_pressure": 1025.7,
+    "max_pressure_location": "Szczecin"
+}
