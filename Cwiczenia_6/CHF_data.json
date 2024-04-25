@@ -1,0 +1,132 @@
+{
+    "table": "A",
+    "currency": "frank szwajcarski",
+    "code": "CHF",
+    "rates": [
+        {
+            "no": "058/A/NBP/2024",
+            "effectiveDate": "2024-03-21",
+            "mid": 4.4069
+        },
+        {
+            "no": "059/A/NBP/2024",
+            "effectiveDate": "2024-03-22",
+            "mid": 4.4337
+        },
+        {
+            "no": "060/A/NBP/2024",
+            "effectiveDate": "2024-03-25",
+            "mid": 4.4371
+        },
+        {
+            "no": "061/A/NBP/2024",
+            "effectiveDate": "2024-03-26",
+            "mid": 4.4047
+        },
+        {
+            "no": "062/A/NBP/2024",
+            "effectiveDate": "2024-03-27",
+            "mid": 4.4018
+        },
+        {
+            "no": "063/A/NBP/2024",
+            "effectiveDate": "2024-03-28",
+            "mid": 4.4228
+        },
+        {
+            "no": "064/A/NBP/2024",
+            "effectiveDate": "2024-03-29",
+            "mid": 4.425
+        },
+        {
+            "no": "065/A/NBP/2024",
+            "effectiveDate": "2024-04-02",
+            "mid": 4.4037
+        },
+        {
+            "no": "066/A/NBP/2024",
+            "effectiveDate": "2024-04-03",
+            "mid": 4.3875
+        },
+        {
+            "no": "067/A/NBP/2024",
+            "effectiveDate": "2024-04-04",
+            "mid": 4.3621
+        },
+        {
+            "no": "068/A/NBP/2024",
+            "effectiveDate": "2024-04-05",
+            "mid": 4.3796
+        },
+        {
+            "no": "069/A/NBP/2024",
+            "effectiveDate": "2024-04-08",
+            "mid": 4.3667
+        },
+        {
+            "no": "070/A/NBP/2024",
+            "effectiveDate": "2024-04-09",
+            "mid": 4.3366
+        },
+        {
+            "no": "071/A/NBP/2024",
+            "effectiveDate": "2024-04-10",
+            "mid": 4.3447
+        },
+        {
+            "no": "072/A/NBP/2024",
+            "effectiveDate": "2024-04-11",
+            "mid": 4.3451
+        },
+        {
+            "no": "073/A/NBP/2024",
+            "effectiveDate": "2024-04-12",
+            "mid": 4.3805
+        },
+        {
+            "no": "074/A/NBP/2024",
+            "effectiveDate": "2024-04-15",
+            "mid": 4.4047
+        },
+        {
+            "no": "075/A/NBP/2024",
+            "effectiveDate": "2024-04-16",
+            "mid": 4.4554
+        },
+        {
+            "no": "076/A/NBP/2024",
+            "effectiveDate": "2024-04-17",
+            "mid": 4.4777
+        },
+        {
+            "no": "077/A/NBP/2024",
+            "effectiveDate": "2024-04-18",
+            "mid": 4.4637
+        },
+        {
+            "no": "078/A/NBP/2024",
+            "effectiveDate": "2024-04-19",
+            "mid": 4.4787
+        },
+        {
+            "no": "079/A/NBP/2024",
+            "effectiveDate": "2024-04-22",
+            "mid": 4.4505
+        },
+        {
+            "no": "080/A/NBP/2024",
+            "effectiveDate": "2024-04-23",
+            "mid": 4.4535
+        },
+        {
+            "no": "081/A/NBP/2024",
+            "effectiveDate": "2024-04-24",
+            "mid": 4.4202
+        },
+        {
+            "no": "082/A/NBP/2024",
+            "effectiveDate": "2024-04-25",
+            "mid": 4.4131
+        }
+    ]
+}

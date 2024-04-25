@@ -1,0 +1,22 @@
+[
+    {
+        "currency":"dolar ameryka\u0144ski",
+        "code":"USD"
+    },
+    {
+        "currency":"frank szwajcarski",
+        "code":"CHF"
+    },
+    {
+        "currency":"euro",
+        "code":"EUR"
+    },
+    {
+        "currency":"funt szterling",
+        "code":"GBP"
+    },
+    {
+        "currency":"jen (Japonia)",
+        "code":"JPY"
+    }
+]

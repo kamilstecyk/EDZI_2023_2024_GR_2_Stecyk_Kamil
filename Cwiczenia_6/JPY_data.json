@@ -1,0 +1,132 @@
+{
+    "table": "A",
+    "currency": "jen (Japonia)",
+    "code": "JPY",
+    "rates": [
+        {
+            "no": "058/A/NBP/2024",
+            "effectiveDate": "2024-03-21",
+            "mid": 0.026098
+        },
+        {
+            "no": "059/A/NBP/2024",
+            "effectiveDate": "2024-03-22",
+            "mid": 0.026334
+        },
+        {
+            "no": "060/A/NBP/2024",
+            "effectiveDate": "2024-03-25",
+            "mid": 0.026309
+        },
+        {
+            "no": "061/A/NBP/2024",
+            "effectiveDate": "2024-03-26",
+            "mid": 0.026247
+        },
+        {
+            "no": "062/A/NBP/2024",
+            "effectiveDate": "2024-03-27",
+            "mid": 0.026347
+        },
+        {
+            "no": "063/A/NBP/2024",
+            "effectiveDate": "2024-03-28",
+            "mid": 0.026472
+        },
+        {
+            "no": "064/A/NBP/2024",
+            "effectiveDate": "2024-03-29",
+            "mid": 0.026366
+        },
+        {
+            "no": "065/A/NBP/2024",
+            "effectiveDate": "2024-04-02",
+            "mid": 0.026384
+        },
+        {
+            "no": "066/A/NBP/2024",
+            "effectiveDate": "2024-04-03",
+            "mid": 0.026262
+        },
+        {
+            "no": "067/A/NBP/2024",
+            "effectiveDate": "2024-04-04",
+            "mid": 0.026045
+        },
+        {
+            "no": "068/A/NBP/2024",
+            "effectiveDate": "2024-04-05",
+            "mid": 0.026133
+        },
+        {
+            "no": "069/A/NBP/2024",
+            "effectiveDate": "2024-04-08",
+            "mid": 0.026035
+        },
+        {
+            "no": "070/A/NBP/2024",
+            "effectiveDate": "2024-04-09",
+            "mid": 0.025823
+        },
+        {
+            "no": "071/A/NBP/2024",
+            "effectiveDate": "2024-04-10",
+            "mid": 0.025856
+        },
+        {
+            "no": "072/A/NBP/2024",
+            "effectiveDate": "2024-04-11",
+            "mid": 0.025911
+        },
+        {
+            "no": "073/A/NBP/2024",
+            "effectiveDate": "2024-04-12",
+            "mid": 0.02608
+        },
+        {
+            "no": "074/A/NBP/2024",
+            "effectiveDate": "2024-04-15",
+            "mid": 0.026134
+        },
+        {
+            "no": "075/A/NBP/2024",
+            "effectiveDate": "2024-04-16",
+            "mid": 0.026335
+        },
+        {
+            "no": "076/A/NBP/2024",
+            "effectiveDate": "2024-04-17",
+            "mid": 0.026359
+        },
+        {
+            "no": "077/A/NBP/2024",
+            "effectiveDate": "2024-04-18",
+            "mid": 0.026274
+        },
+        {
+            "no": "078/A/NBP/2024",
+            "effectiveDate": "2024-04-19",
+            "mid": 0.02635
+        },
+        {
+            "no": "079/A/NBP/2024",
+            "effectiveDate": "2024-04-22",
+            "mid": 0.026202
+        },
+        {
+            "no": "080/A/NBP/2024",
+            "effectiveDate": "2024-04-23",
+            "mid": 0.026226
+        },
+        {
+            "no": "081/A/NBP/2024",
+            "effectiveDate": "2024-04-24",
+            "mid": 0.026091
+        },
+        {
+            "no": "082/A/NBP/2024",
+            "effectiveDate": "2024-04-25",
+            "mid": 0.025871
+        }
+    ]
+}

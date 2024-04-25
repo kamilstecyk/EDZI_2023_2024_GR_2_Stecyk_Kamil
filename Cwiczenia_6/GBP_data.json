@@ -1,0 +1,132 @@
+{
+    "table": "A",
+    "currency": "funt szterling",
+    "code": "GBP",
+    "rates": [
+        {
+            "no": "058/A/NBP/2024",
+            "effectiveDate": "2024-03-21",
+            "mid": 5.0367
+        },
+        {
+            "no": "059/A/NBP/2024",
+            "effectiveDate": "2024-03-22",
+            "mid": 5.0257
+        },
+        {
+            "no": "060/A/NBP/2024",
+            "effectiveDate": "2024-03-25",
+            "mid": 5.0246
+        },
+        {
+            "no": "061/A/NBP/2024",
+            "effectiveDate": "2024-03-26",
+            "mid": 5.0243
+        },
+        {
+            "no": "062/A/NBP/2024",
+            "effectiveDate": "2024-03-27",
+            "mid": 5.0327
+        },
+        {
+            "no": "063/A/NBP/2024",
+            "effectiveDate": "2024-03-28",
+            "mid": 5.0474
+        },
+        {
+            "no": "064/A/NBP/2024",
+            "effectiveDate": "2024-03-29",
+            "mid": 5.03
+        },
+        {
+            "no": "065/A/NBP/2024",
+            "effectiveDate": "2024-04-02",
+            "mid": 5.0256
+        },
+        {
+            "no": "066/A/NBP/2024",
+            "effectiveDate": "2024-04-03",
+            "mid": 5.0117
+        },
+        {
+            "no": "067/A/NBP/2024",
+            "effectiveDate": "2024-04-04",
+            "mid": 5.0042
+        },
+        {
+            "no": "068/A/NBP/2024",
+            "effectiveDate": "2024-04-05",
+            "mid": 5.0003
+        },
+        {
+            "no": "069/A/NBP/2024",
+            "effectiveDate": "2024-04-08",
+            "mid": 4.9915
+        },
+        {
+            "no": "070/A/NBP/2024",
+            "effectiveDate": "2024-04-09",
+            "mid": 4.966
+        },
+        {
+            "no": "071/A/NBP/2024",
+            "effectiveDate": "2024-04-10",
+            "mid": 4.9843
+        },
+        {
+            "no": "072/A/NBP/2024",
+            "effectiveDate": "2024-04-11",
+            "mid": 4.9835
+        },
+        {
+            "no": "073/A/NBP/2024",
+            "effectiveDate": "2024-04-12",
+            "mid": 5.0007
+        },
+        {
+            "no": "074/A/NBP/2024",
+            "effectiveDate": "2024-04-15",
+            "mid": 5.0192
+        },
+        {
+            "no": "075/A/NBP/2024",
+            "effectiveDate": "2024-04-16",
+            "mid": 5.0609
+        },
+        {
+            "no": "076/A/NBP/2024",
+            "effectiveDate": "2024-04-17",
+            "mid": 5.0812
+        },
+        {
+            "no": "077/A/NBP/2024",
+            "effectiveDate": "2024-04-18",
+            "mid": 5.0589
+        },
+        {
+            "no": "078/A/NBP/2024",
+            "effectiveDate": "2024-04-19",
+            "mid": 5.0615
+        },
+        {
+            "no": "079/A/NBP/2024",
+            "effectiveDate": "2024-04-22",
+            "mid": 5.0131
+        },
+        {
+            "no": "080/A/NBP/2024",
+            "effectiveDate": "2024-04-23",
+            "mid": 5.0238
+        },
+        {
+            "no": "081/A/NBP/2024",
+            "effectiveDate": "2024-04-24",
+            "mid": 5.022
+        },
+        {
+            "no": "082/A/NBP/2024",
+            "effectiveDate": "2024-04-25",
+            "mid": 5.0427
+        }
+    ]
+}
