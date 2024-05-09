@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS offer (
     source_id INT,
     link TEXT UNIQUE,
     seniority VARCHAR(50),
-    salary_min DECIMAL(6, 2),
-    salary_max DECIMAL(6, 2),
+    salary_min numeric(8, 2),
+    salary_max numeric(8, 2),
 
     FOREIGN KEY (position_id) REFERENCES position(position_id),
     FOREIGN KEY (company_id) REFERENCES company(company_id),

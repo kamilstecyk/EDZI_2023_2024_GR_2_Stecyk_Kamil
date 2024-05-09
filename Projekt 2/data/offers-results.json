@@ -25,8 +25,8 @@
         "category": [
             "Big Data / Data Science"
         ],
-        "min_salary": 147.6,
-        "max_salary": 221.4,
+        "min_salary": 24796.8,
+        "max_salary": 37195.2,
         "currency": "zł",
         "skills": [
             "Java",
@@ -735,6 +735,26 @@
     {
         "id": null,
         "source": "justjoin.it",
+        "url": "https://justjoin.it/offers/trans-eu-group-sa-dataops-engineer-krakow-375285",
+        "job_position": "DataOps Engineer",
+        "company": "Trans.eu Group SA",
+        "category": [
+            "Data"
+        ],
+        "min_salary": 14760.0,
+        "max_salary": 27060.0,
+        "currency": "PLN",
+        "skills": [
+            "Python",
+            "Git",
+            "AWS",
+            "Snowflake"
+        ],
+        "seniority": "Mid"
+    },
+    {
+        "id": null,
+        "source": "justjoin.it",
         "url": "https://justjoin.it/offers/getindata-part-of-xebia-senior-data-engineer-flink-krakow-387348",
         "job_position": "Senior Data Engineer (Flink)",
         "company": "GetInData | Part of Xebia",
@@ -982,26 +1002,6 @@
             "BigQuery"
         ],
         "seniority": "Senior"
-    },
-    {
-        "id": null,
-        "source": "justjoin.it",
-        "url": "https://justjoin.it/offers/trans-eu-group-sa-dataops-engineer-krakow-375285",
-        "job_position": "DataOps Engineer",
-        "company": "Trans.eu Group SA",
-        "category": [
-            "Data"
-        ],
-        "min_salary": 14760.0,
-        "max_salary": 27060.0,
-        "currency": "PLN",
-        "skills": [
-            "Python",
-            "Git",
-            "AWS",
-            "Snowflake"
-        ],
-        "seniority": "Mid"
     },
     {
         "id": null,

@@ -81,7 +81,8 @@ class OfferScraper():
     
     @staticmethod
     def is_less_than_4_digit(number):
-        return len(str(number)) < 4
+        numerical_part = str(number).split('.')[0]
+        return len(str(numerical_part)) < 4
 
     def get_offers(self) -> List[offer.Offer]:
         pass
