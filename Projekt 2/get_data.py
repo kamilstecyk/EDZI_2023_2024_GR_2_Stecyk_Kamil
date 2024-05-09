@@ -2,9 +2,17 @@
 from scrapers.offer_scraper_pracuj import OfferScraperPracuj
 from scrapers.offer_scraper_justjoinit import OfferScraperJustJoinIt
 import json
+import os
 
-def write_data_to_json(file_path, data):
+def write_data_to_json(filename, data):
     try:
+        # Check if the "data" folder exists, if not, create it
+        if not os.path.exists('data'):
+            os.makedirs('data')
+
+        # Construct the file path by joining the "data" folder path with the filename
+        file_path = os.path.join('data', filename)
+
         with open(file_path, 'w') as json_file:
             json.dump(data, json_file, indent=4, ensure_ascii=False)
         print(f"Offers has been written successfully to json file {file_path}")
@@ -28,8 +36,8 @@ def main():
         for offer in offers_dicts:
             merged_offers.append(offer)
 
-    json_file_path = 'offers-results.json'
-    write_data_to_json(json_file_path, merged_offers)
+    json_file = 'offers-results.json'
+    write_data_to_json(json_file, merged_offers)
 
     print("Scraping has finished.")
 

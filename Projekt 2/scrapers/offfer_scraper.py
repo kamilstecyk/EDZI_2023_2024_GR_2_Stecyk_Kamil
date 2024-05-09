@@ -5,7 +5,7 @@ import urllib.robotparser
 import re
 
 class OfferScraper():
-    _headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3', 'Accept-Language': 'en-US,en;q=0.9'}
+    _headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3', 'Accept-Language': 'en-US,en;q=0.9', 'Content-Type': 'text/html; charset=utf-8'}
 
     _url_to_scrap = None
 
@@ -75,7 +75,8 @@ class OfferScraper():
            
         if('net' in salary_amount_unit.lower()):
                 salary *= 1.23
-        
+                
+        salary = round(salary, 2)
         return salary
     
     @staticmethod

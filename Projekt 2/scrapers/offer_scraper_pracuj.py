@@ -61,14 +61,19 @@ class OfferScraperPracuj(OfferScraper):
 
             job_position = soup.find('h1', {'data-test': 'text-positionName'}).text.strip()
             job_company = ''.join(soup.find('h2', {'data-test': 'text-employerName'}).find_all(text=True, recursive=False)).strip()
-            job_category = soup.find('div', class_='v1xz4nnx').text.strip()
+
+            job_category_wrapper = soup.find('li', {'data-test': 'it-specializations'})
+            categories = job_category_wrapper.find('div', class_='v1xz4nnx').text.strip()
+            job_categories_separated = categories.split(",")
+            job_categories = [category.strip() for category in job_categories_separated]
+
 
             job_min_salary, job_max_salary, job_salary_currency = OfferScraperPracuj.get_offer_sallary_info(soup)
             job_skills = OfferScraperPracuj.__get_skills(soup, job_offer_url)
             job_seniority = OfferScraperPracuj.__get_seniority(soup, job_offer_url)
 
             offer = Offer(job_offer_id, job_source, job_offer_url)
-            offer.set_job_basic_info(job_category, job_position, job_company, job_seniority)
+            offer.set_job_basic_info(job_categories, job_position, job_company, job_seniority)
             offer.set_salary(job_min_salary, job_max_salary, job_salary_currency)
             offer.set_skills(job_skills)
 
@@ -98,10 +103,10 @@ class OfferScraperPracuj(OfferScraper):
             max_salary = max_salary.replace(" ", "")
         else:
             min_salary = max_salary = salary_text.replace(" ", "")
-
-        min_salary, max_salary = salary_text.split("–")
-        min_salary = min_salary.replace(" ", "")
-        max_salary = max_salary.replace(" ", "")
+            cleaned_text = re.sub(r'[^\x00-\x7F]+', '', min_salary)
+            
+            if cleaned_text != min_salary:
+                raise Exception(f'There is a problem with salary string {salary_text}. Offer has not been fetched.')
 
         salary_amount_unit = html_section_to_parse.find('div', class_='sxxv7b6').text
         currency = OfferScraper.get_currency(html.unescape(max_salary))

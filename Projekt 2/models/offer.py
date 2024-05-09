@@ -8,7 +8,7 @@ class Offer:
     url: str
     job_position: str
     company: str
-    category: str
+    category: Optional[List[str]]
     min_salary: Optional[float] = None
     max_salary: Optional[float] = None
     currency: Optional[str] = None

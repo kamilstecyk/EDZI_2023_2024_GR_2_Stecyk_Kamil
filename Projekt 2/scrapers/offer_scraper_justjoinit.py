@@ -58,7 +58,7 @@ class OfferScraperJustJoinIt(OfferScraper):
 
             job_position = soup.find('h1', class_="css-1u65tlp").text
             job_company = soup.find('div', class_="css-mbkv7r").text
-            job_category = soup.find('div', class_="css-6t6cyr").text
+            job_category = [ soup.find('div', class_="css-6t6cyr").text ]
             job_seniority = soup.find_all('div', class_="css-15wyzmd")[1].text
 
             job_min_salary, job_max_salary, job_salary_currency = OfferScraperJustJoinIt.__get_salary_details(soup)
